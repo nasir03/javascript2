@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daftar Nilai Siswa</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 2px solid gray;
+        padding: 8px;
+        text-align: cenetr;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<h2>Daftar Nilai Siswa</h2>
+
+<table id="nilaiTable">
+    <thead>
+        <tr>
+            <th>Nomor</th>
+            <th>Nama</th>
+            <th>Nilai</th>
+            <th>Keterangan</th>
+            <th>Grade</th>
+            <th>Predikat</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+    </tbody>
+</table>
+
+<script>
+
+var dataNilai = [
+    { nomor: 1, nama: "Muhamad Nasir", nilai: 85, keterangan: "Lulus", grade: "A", predikat: "Sangat Baik" },
+    { nomor: 2, nama: "M.Asroful Anam", nilai: 70, keterangan: "Lulus", grade: "B", predikat: "Baik" },
+    { nomor: 3, nama: "Fauzan Hidayat", nilai: 60, keterangan: "Lulus", grade: "C", predikat: "Cukup" }
+];
+
+
+function tampilkanDataNilai() {
+    var tableBody = document.querySelector("#nilaiTable tbody");
+    tableBody.innerHTML = ""
+    dataNilai.forEach(function(siswa) {
+        var row = "<tr>" +
+                    "<td>" + siswa.nomor + "</td>" +
+                    "<td>" + siswa.nama + "</td>" +
+                    "<td>" + siswa.nilai + "</td>" +
+                    "<td>" + siswa.keterangan + "</td>" +
+                    "<td>" + siswa.grade + "</td>" +
+                    "<td>" + siswa.predikat + "</td>" +
+                  "</tr>";
+        tableBody.innerHTML += row;
+    });
+}
+
+
+document.addEventListener("DOMContentLoaded", tampilkanDataNilai);
+</script>
+
+</body>
+</html>
